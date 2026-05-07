@@ -28,12 +28,12 @@ export default function LayoutWrapper({
       <Sidebar mobileOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
 
       {/* Mobile backdrop */}
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
-          onClick={() => setMobileOpen(false)}
-        />
-      )}
+      <div
+        className={`fixed inset-0 bg-black/50 z-30 md:hidden transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMobileOpen(false)}
+      />
 
       <main className="flex-1 p-4 md:p-6 pt-16 md:pt-6 overflow-y-auto transition-all duration-300 w-full min-w-0">
         {children}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   LayoutDashboard,
@@ -13,7 +14,7 @@ import AnalyticsChart from "./components/AnalyticsChart";
 import { foodItems, currentUser } from "./lib/data";
 
 export default function Dashboard() {
-  const todaySpecial = foodItems.find((f) => f.name === "Chicken Biryani") || foodItems[0];
+  const todaySpecial = foodItems.find((f) => f.name === "Chicken Roll") || foodItems[0];
   const vegCount = foodItems.filter((f) => f.isVeg).length;
   const nonVegCount = foodItems.filter((f) => !f.isVeg).length;
 
@@ -91,11 +92,21 @@ export default function Dashboard() {
       {/* Today\u2019s Special */}
       <div className="bg-card border border-border rounded-2xl p-6">
         <h2 className="text-lg font-bold text-foreground mb-4">
-          Today\u2019s Special
+          Todays Special
         </h2>
         <div className="flex flex-col sm:flex-row items-start gap-6">
-          <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center text-4xl shrink-0">
-            {todaySpecial.isVeg ? "\u{1F96C}" : "\u{1F357}"}
+          <div className="w-24 h-24 rounded-2xl bg-muted flex items-center justify-center text-4xl shrink-0 overflow-hidden relative">
+            {todaySpecial.image ? (
+              <Image
+                src={todaySpecial.image}
+                alt={todaySpecial.name}
+                fill
+                className="object-cover"
+                sizes="96px"
+              />
+            ) : (
+              <span>{todaySpecial.isVeg ? "🥬" : "🍗"}</span>
+            )}
           </div>
           <div className="min-w-0">
             <h3 className="text-xl font-bold text-foreground">

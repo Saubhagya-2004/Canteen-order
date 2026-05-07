@@ -93,9 +93,9 @@ export default function Sidebar({ mobileOpen = false, onClose }: SidebarProps) {
   return (
     <aside
       className={cn(
-        "bg-sidebar text-sidebar-foreground flex flex-col z-40 border-r border-sidebar-border transition-all duration-300",
+        "bg-sidebar text-sidebar-foreground flex flex-col z-40 border-r border-sidebar-border transition-all duration-300 ",
         // Mobile: fixed overlay drawer
-        "fixed md:relative inset-y-0 left-0 md:h-screen",
+        "fixed md:relative inset-y-0 left-0 min-h-screen",
         mobileOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0",
         // Width
         "w-64",

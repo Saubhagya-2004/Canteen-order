@@ -51,6 +51,7 @@ export const foodItems: FoodItem[] = [
     isVeg: false,
     status: "available",
     description: "Spicy chicken wrapped in soft paratha",
+    image: "/assets/chicken roll.jpeg",
   },
   {
     id: "2",
@@ -62,6 +63,7 @@ export const foodItems: FoodItem[] = [
     isVeg: true,
     status: "out-of-stock",
     description: "Grilled paneer with aromatic rice",
+    image:"/assets/paneer tika.jpeg"
   },
   {
     id: "3",
@@ -106,6 +108,7 @@ export const foodItems: FoodItem[] = [
     isVeg: true,
     status: "ready",
     description: "Kidney beans curry with steamed rice",
+    image: "/assets/rice.jpeg",
   },
   {
     id: "7",
@@ -128,6 +131,7 @@ export const foodItems: FoodItem[] = [
     isVeg: false,
     status: "out-of-stock",
     description: "Indo-Chinese style chilli chicken",
+    image: "/assets/chilli chiken.jpeg",
   },
   {
     id: "9",
@@ -172,6 +176,7 @@ export const foodItems: FoodItem[] = [
     isVeg: false,
     status: "live",
     description: "Battered fish with potato chips",
+    image: "/assets/fish& fry.jpeg",
   },
   {
     id: "13",
@@ -183,6 +188,7 @@ export const foodItems: FoodItem[] = [
     isVeg: true,
     status: "available",
     description: "Stuffed potato paratha with curd",
+    image: "/assets/aloo paratha.jpeg",
   },
   {
     id: "14",
@@ -194,6 +200,7 @@ export const foodItems: FoodItem[] = [
     isVeg: true,
     status: "available",
     description: "Flattened rice with spices and peanuts",
+    image: "/assets/poha.jpeg",
   },
   {
     id: "15",
@@ -205,6 +212,7 @@ export const foodItems: FoodItem[] = [
     isVeg: false,
     status: "available",
     description: "Scrambled egg roll with sauces",
+    image: "/assets/egg roll.jpeg",
   },
   {
     id: "16",
@@ -216,6 +224,7 @@ export const foodItems: FoodItem[] = [
     isVeg: true,
     status: "available",
     description: "Crispy dosa with potato filling",
+    image: "/assets/masala dosa.jpeg",
   },
   {
     id: "17",
@@ -227,7 +236,8 @@ export const foodItems: FoodItem[] = [
     isVeg: false,
     status: "available",
     description: "Creamy tomato-based chicken curry",
-  },
+    image: "/assets/butter chicken.jpeg",
+    },
   {
     id: "18",
     name: "Dal Makhani",
@@ -238,6 +248,7 @@ export const foodItems: FoodItem[] = [
     isVeg: true,
     status: "available",
     description: "Creamy black lentils",
+    image: "/assets/dal makhani.jpeg",
   },
   {
     id: "19",
@@ -260,6 +271,7 @@ export const foodItems: FoodItem[] = [
     isVeg: true,
     status: "available",
     description: "Refreshing lime soda",
+    image: "/assets/drinks.jpeg",
   },
 ];
 

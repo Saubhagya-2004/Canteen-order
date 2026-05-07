@@ -1,6 +1,7 @@
 "use client";
 
 import { Plus, Minus } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/app/lib/utils";
 import type { FoodItem } from "@/app/lib/data";
 import { useCart } from "@/app/context/CartContext";
@@ -38,13 +39,23 @@ export default function FoodCard({ item }: FoodCardProps) {
         </div>
       )}
 
-      {/* Image Placeholder */}
+      {/* Image */}
       <div className="relative h-40 bg-muted">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-24 h-24 rounded-full bg-secondary flex items-center justify-center">
-            <span className="text-3xl">{item.isVeg ? "\u{1F96C}" : "\u{1F357}"}</span>
+        {item.image ? (
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-24 rounded-full bg-secondary flex items-center justify-center">
+              <span className="text-3xl">{item.isVeg ? "🥬" : "🍗"}</span>
+            </div>
           </div>
-        </div>
+        )}
         {item.status === "out-of-stock" && (
           <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
             <span className="text-white font-bold text-sm">Out of Stock</span>
